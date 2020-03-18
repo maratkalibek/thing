@@ -2,8 +2,6 @@ package com.github.thing;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Thing {
 
@@ -12,7 +10,6 @@ public class Thing {
 
     private BigDecimal smallest;
     private BigDecimal largest;
-    private BigDecimal average;
 
     public void takeNumber(BigDecimal number) {
         amount = amount.add(BigInteger.ONE);
@@ -44,6 +41,9 @@ public class Thing {
     }
 
     public BigDecimal giveAverage() {
+        if (amount.equals(BigInteger.ZERO)) {
+            return null;
+        }
         return sum.divide(new BigDecimal(amount));
     }
 }

@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class ThingTests {
+public class ThingTest {
 
     @Test
     public void testSmallest() {
@@ -37,4 +37,11 @@ public class ThingTests {
         Assert.assertEquals(new BigDecimal(1.5), average);
     }
 
+    @Test
+    public void testWithoutOfferedNumbers() {
+        Thing theThing = new Thing();
+        Assert.assertNull(theThing.giveAverage());
+        Assert.assertNull(theThing.giveSmallest());
+        Assert.assertNull(theThing.giveLargest());
+    }
 }
