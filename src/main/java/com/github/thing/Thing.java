@@ -2,6 +2,7 @@ package com.github.thing;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 
 public class Thing {
 
@@ -44,6 +45,6 @@ public class Thing {
         if (amount.equals(BigInteger.ZERO)) {
             return null;
         }
-        return sum.divide(new BigDecimal(amount));
+        return sum.divide(new BigDecimal(amount), 3, RoundingMode.HALF_UP);
     }
 }
