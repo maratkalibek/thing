@@ -25,6 +25,14 @@ public class Thing {
         } else {
             smallest = number;
         }
+
+        if (largest!=null) {
+            if (largest.compareTo(number) < 0) {
+                largest = number;
+            }
+        } else {
+            largest = number;
+        }
     }
 
     public BigDecimal giveSmallest() {
@@ -32,10 +40,10 @@ public class Thing {
     }
 
     public BigDecimal giveLargest() {
-        return null;
+        return largest;
     }
 
     public BigDecimal giveAverage() {
-        return null;
+        return sum.divide(new BigDecimal(amount));
     }
 }
